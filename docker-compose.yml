@@ -9,6 +9,7 @@ services:
     - MYSQL_PASSWORD=root
     volumes:
     - ./mysql-data:/var/lib/mysql
+    container_name: bookstack-mysql
 
   bookstack:
     image: solidnerd/bookstack:0.25.2
@@ -24,6 +25,7 @@ services:
     - ./storage-uploads:/var/www/bookstack/public/storage
     ports:
     - "8080:80"
+    container_name: bookstack-app
 
 volumes:
  mysql-data:
