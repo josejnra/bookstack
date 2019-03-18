@@ -10,6 +10,9 @@ DOCKER_HOST=$(ip addr show docker0 | grep -i inet | grep -i 16 | cut -d "/" -f 1
 
 # verify user access rules in mysql-server for host options to access using the above host ip
 
+# references:
+# https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach
+
 docker run --rm -it \
 -e DB_HOST=$DOCKER_HOST \
 -e DB_DATABASE=bookstack \
